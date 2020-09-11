@@ -1,0 +1,23 @@
+{
+	"name": "editorjs-latex",
+	"version": "1.0.0",
+	"description": "LaTeX block support for EditorJS.",
+	"main": "editorjs-latex.js",
+	"scripts": {
+		"build": "npm build ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mdgaziur/EditorJS-LaTeX.git"
+	},
+	"keywords": [
+		"EditorJS",
+		"LaTeX"
+	],
+	"author": "MD Gaziur Rahman Noor",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mdgaziur/EditorJS-LaTeX/issues"
+	},
+	"homepage": "https://github.com/mdgaziur/EditorJS-LaTeX#readme"
+}

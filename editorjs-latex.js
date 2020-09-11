@@ -1,6 +1,7 @@
 /*
-            EditorJS LaTeX
-    Created By: MD Gaziur Rahman Noor
+              EditorJS LaTeX
+      Created By: MD Gaziur Rahman Noor
+    Adds LaTex block support to EditorJS
 */
 class EJLaTeX {
 
