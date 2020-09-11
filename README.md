@@ -5,8 +5,8 @@ Created By: MD Gaziur Rahman Noor
 <h2>Setting Up</h2>
 Add the following code inside the <code>&#x3C;head&#x3E;</code> tag.<br/>
 <pre>
-&#x3C;script src=&#x22;https://cdn.jsdelivr.net/gh/mdgaziur/EditorJS-LaTeX@1.0.0/editorjs-latex.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/mdgaziur/EditorJS-LaTeX@1.0.0/editorjs-latex.min.css&#x22;&#x3E;
+&#x3C;script src=&#x22;https://cdn.jsdelivr.net/gh/mdgaziur/EditorJS-LaTeX@1.0.0/dist/editorjs-latex.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/mdgaziur/EditorJS-LaTeX@1.0.0/dist/editorjs-latex.min.css&#x22;&#x3E;
 &#x3C;script src=&#x22;https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
 </pre>
 To add this library to EditorJS, simply add the follwing code:<br/>
