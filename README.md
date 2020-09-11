@@ -4,6 +4,8 @@
 LaTeX block support for EditorJS<br/>
 Created By: MD Gaziur Rahman Noor
 
+![Screenshot of EditorJS-LaTeX](./screenshot.png)
+
 <h2>Setting Up</h2>
 Add the following code inside the <code>&#x3C;head&#x3E;</code> tag.<br/>
 <pre>
