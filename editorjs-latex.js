@@ -33,6 +33,9 @@ class EJLaTeX {
 
         //Load the data if exists
         input.value = this.data ? this.data : '';
+        
+        //Set the placeholder text for LaTeX expression input
+        input.placeholder = "Enter LaTeX here";
 
         //Will render LaTeX if there is any in saved data
         katex.render(input.value, preview, {
