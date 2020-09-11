@@ -1,5 +1,6 @@
 # EditorJS-LaTeX
 [![](https://data.jsdelivr.com/v1/package/gh/mdgaziur/EditorJS-LaTeX/badge)](https://www.jsdelivr.com/package/gh/mdgaziur/EditorJS-LaTeX)
+<br/>
 LaTeX block support for EditorJS<br/>
 Created By: MD Gaziur Rahman Noor
 
