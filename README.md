@@ -17,9 +17,10 @@ Add the following code inside the ```<head>``` tag.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css"></script>
 ```
+To use with nodejs simply run ```npm i editorjs-latex```.
 
 
-To add this library to EditorJS, simply add the follwing code:<br/>
+To add this library to EditorJS, simply add the follwing code:
 
 ```javascript
 tools: {
