@@ -1,23 +1,32 @@
 {
-	"name": "editorjs-latex",
-	"version": "1.0.0",
-	"description": "LaTeX block support for EditorJS.",
-	"main": "editorjs-latex.js",
-	"scripts": {
-		"build": "npm build ."
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/mdgaziur/EditorJS-LaTeX.git"
-	},
-	"keywords": [
-		"EditorJS",
-		"LaTeX"
-	],
-	"author": "MD Gaziur Rahman Noor",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/mdgaziur/EditorJS-LaTeX/issues"
-	},
-	"homepage": "https://github.com/mdgaziur/EditorJS-LaTeX#readme"
+  "name": "my-webpack-project",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "./index.js",
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdgaziur/EditorJS-LaTeX.git"
+  },
+  "keywords": [
+    "EditorJS",
+    "LaTeX"
+  ],
+  "author": "MD Gaziur Rahman Noor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mdgaziur/EditorJS-LaTeX/issues"
+  },
+  "homepage": "https://github.com/mdgaziur/EditorJS-LaTeX#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0"
+  }
 }
