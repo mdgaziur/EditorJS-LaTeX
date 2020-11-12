@@ -68,3 +68,5 @@ class EJLaTeX {
         };
     }
 }
+
+module.exports = EJLaTeX;
