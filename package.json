@@ -1,7 +1,7 @@
 {
-  "name": "my-webpack-project",
+  "name": "EditorJS LaTeX",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "LaTeX block support for EditorJS",
   "main": "./index.js",
   "scripts": {
     "build": "gulp"
