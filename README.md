@@ -33,6 +33,19 @@ tools: {
 }
 ```
 
+If you need to adjust the theming of the editor, you can add CSS rules in the config like:
+
+```javascript
+tools: {
+        Math: {
+        class: EJLaTeX,
+        shortcut: 'CMD+SHIFT+M',
+        config: {
+            css: '.math-input-wrapper {	padding: 5px;}'
+        }
+    }, ...
+}
+```
 
 ## Getting data
 The output data of this plugin will look like bellow:

@@ -1,5 +1,5 @@
 {
-  "name": "EditorJS LaTeX",
+  "name": "editorjs-latex",
   "version": "1.0.0",
   "description": "LaTeX block support for EditorJS",
   "main": "./index.js",
@@ -20,6 +20,9 @@
     "url": "https://github.com/mdgaziur/EditorJS-LaTeX/issues"
   },
   "homepage": "https://github.com/mdgaziur/EditorJS-LaTeX#readme",
+  "dependencies": {
+    "katex": "^0.16.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",

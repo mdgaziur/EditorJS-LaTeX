@@ -1,13 +1,17 @@
+import katex from 'katex';
 /*
               EditorJS LaTeX
       Created By: MD Gaziur Rahman Noor
     Adds LaTex block support to EditorJS
 */
-class EJLaTeX {
+export default class EJLaTeX {
 
-    constructor({data}) {
+    constructor({ data, config }) {
         //Get the saved data if exists
         this.data = data.math;
+        if (config && config.css) {
+            this.addCss(config.css);
+        }
     }
 
     static get toolbox() {
@@ -18,13 +22,13 @@ class EJLaTeX {
         };
     }
 
-    render (){
+    render() {
         //Create all the DOM elements
         const wrapper = document.createElement('div');
         const preview = document.createElement('p');
         const input = document.createElement('input');
 
-        if(typeof katex === "undefined") {
+        if (typeof katex === "undefined") {
             let errorMessageSpan = document.createElement("span");
             errorMessageSpan.className = "errorMessage";
             errorMessageSpan.innerText = "[Erorr] KaTeX is not found! Add KaTeX to this webpage to continue!"
@@ -37,7 +41,7 @@ class EJLaTeX {
 
         //Load the data if exists
         input.value = this.data ? this.data : '';
-        
+
         //Set the placeholder text for LaTeX expression input
         input.setAttribute("placeholder", "Enter LaTeX here");
 
@@ -67,6 +71,14 @@ class EJLaTeX {
             math: blockContent.childNodes[1].value
         };
     }
-}
 
-module.exports = EJLaTeX;
+    addCss(cssRules) {
+
+        const head = document.head;
+
+        let css = document.createElement('style');
+        if (css.styleSheet) css.styleSheet.cssText = cssRules; // Support for IE
+        else css.appendChild(document.createTextNode(cssRules)); // Support for the rest
+        head.appendChild(css);
+    }
+}
