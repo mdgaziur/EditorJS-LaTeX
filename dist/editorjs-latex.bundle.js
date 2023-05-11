@@ -1,11 +1,17 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _katex = _interopRequireDefault(require("katex"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 /*
               EditorJS LaTeX
       Created By: MD Gaziur Rahman Noor
@@ -13,14 +19,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 */
 var EJLaTeX = /*#__PURE__*/function () {
   function EJLaTeX(_ref) {
-    var data = _ref.data;
-
+    var data = _ref.data,
+      config = _ref.config;
     _classCallCheck(this, EJLaTeX);
-
     //Get the saved data if exists
     this.data = data.math;
+    if (config && config.css) {
+      this.addCss(config.css);
+    }
   }
-
   _createClass(EJLaTeX, [{
     key: "render",
     value: function render() {
@@ -28,30 +35,32 @@ var EJLaTeX = /*#__PURE__*/function () {
       var wrapper = document.createElement('div');
       var preview = document.createElement('p');
       var input = document.createElement('input');
-
-      if (typeof katex === "undefined") {
+      if (typeof _katex["default"] === "undefined") {
         var errorMessageSpan = document.createElement("span");
         errorMessageSpan.className = "errorMessage";
         errorMessageSpan.innerText = "[Erorr] KaTeX is not found! Add KaTeX to this webpage to continue!";
         return errorMessageSpan;
       }
-
       wrapper.classList.add('math-input-wrapper');
       preview.classList.add('math-preview');
-      input.classList.add('math-input'); //Load the data if exists
+      input.classList.add('math-input');
 
-      input.value = this.data ? this.data : ''; //Set the placeholder text for LaTeX expression input
+      //Load the data if exists
+      input.value = this.data ? this.data : '';
 
-      input.setAttribute("placeholder", "Enter LaTeX here"); //Will render LaTeX if there is any in saved data
+      //Set the placeholder text for LaTeX expression input
+      input.setAttribute("placeholder", "Enter LaTeX here");
 
-      katex.render(input.value, preview, {
+      //Will render LaTeX if there is any in saved data
+      _katex["default"].render(input.value, preview, {
         throwOnError: false
       });
       input.addEventListener('keyup', function (e) {
         //Prevent default actions
-        e.preventDefault(); //Render LaTeX expression
+        e.preventDefault();
 
-        katex.render(input.value, preview, {
+        //Render LaTeX expression
+        _katex["default"].render(input.value, preview, {
           throwOnError: false
         });
       });
@@ -66,6 +75,15 @@ var EJLaTeX = /*#__PURE__*/function () {
         math: blockContent.childNodes[1].value
       };
     }
+  }, {
+    key: "addCss",
+    value: function addCss(cssRules) {
+      var head = document.head;
+      var css = document.createElement('style');
+      if (css.styleSheet) css.styleSheet.cssText = cssRules; // Support for IE
+      else css.appendChild(document.createTextNode(cssRules)); // Support for the rest
+      head.appendChild(css);
+    }
   }], [{
     key: "toolbox",
     get: function get() {
@@ -76,6 +94,6 @@ var EJLaTeX = /*#__PURE__*/function () {
       };
     }
   }]);
-
   return EJLaTeX;
 }();
+exports["default"] = EJLaTeX;
