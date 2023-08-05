@@ -16,10 +16,12 @@ Add the following code inside the ```<head>``` tag.
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.19.0/dist/editor.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/mdgaziur/EditorJS-LaTeX@latest/dist/editorjs-latex.bundle-min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdgaziur/EditorJS-LaTeX@latest/dist/editorjs-latex.bundle.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css"></link>
 ```
-To use with nodejs simply run ```npm i editorjs-latex```.
+To use with nodejs simply run ```npm i editorjs-latex``` and import using the following code:
+```javascript
+const EJLaTeX = require('editorjs-latex');
+```
 
 
 To add this library to EditorJS, simply add the follwing code:
@@ -41,7 +43,7 @@ tools: {
         class: EJLaTeX,
         shortcut: 'CMD+SHIFT+M',
         config: {
-            css: '.math-input-wrapper {	padding: 5px;}'
+            css: '.math-input-wrapper { padding: 5px; }'
         }
     }, ...
 }

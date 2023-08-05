@@ -2,14 +2,16 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const minify = require('gulp-minify');
 const cleanCss = require('gulp-clean-css');
-const babel = require('gulp-babel');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 
 function buildJS() {
-    return gulp.src(['src/index.js'])
+    return browserify(['src/index.js'])
+        .bundle()
+        .pipe(source('src/index.js'))
+        .pipe(buffer())
         .pipe(concat('editorjs-latex.bundle.js'))
-        .pipe(babel({
-            "presets": ["@babel/env"]
-        }))
         .pipe(minify())
         .pipe(gulp.dest('./dist'));
 };

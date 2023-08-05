@@ -1,6 +1,6 @@
 {
   "name": "editorjs-latex",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "LaTeX block support for EditorJS",
   "main": "./src/index.js",
   "scripts": {
@@ -20,16 +20,16 @@
     "url": "https://github.com/mdgaziur/EditorJS-LaTeX/issues"
   },
   "homepage": "https://github.com/mdgaziur/EditorJS-LaTeX#readme",
-  "dependencies": {
-    "katex": "^0.16.4"
-  },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
+    "browserify": "^17.0.0",
     "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-minify": "^3.1.0"
+    "gulp-minify": "^3.1.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "katex": "^0.16.4"
   }
 }
