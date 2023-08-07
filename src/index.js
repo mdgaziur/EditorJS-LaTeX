@@ -88,6 +88,6 @@ class EJLaTeX {
 
 // Expose the class globally if this class is being used inside a browser
 if (typeof window !== "undefined") {
-    window.EJLaTeX = EJLaTeX;
+  window.EJLaTeX = EJLaTeX;
 }
 module.exports = EJLaTeX;
