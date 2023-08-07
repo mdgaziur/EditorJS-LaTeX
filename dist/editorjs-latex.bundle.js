@@ -18890,6 +18890,10 @@ class EJLaTeX {
         };
     }
 
+    static get isReadOnlySupported() {
+        return true;
+    }
+
     addCss(cssRules) {
         const head = document.head;
         let css = document.createElement('style');
@@ -18905,7 +18909,7 @@ class EJLaTeX {
 
 // Expose the class globally if this class is being used inside a browser
 if (typeof window !== "undefined") {
-  window.EJLaTeX = EJLaTeX;
+    window.EJLaTeX = EJLaTeX;
 }
 module.exports = EJLaTeX;
 
