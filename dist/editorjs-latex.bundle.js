@@ -18890,6 +18890,10 @@ class EJLaTeX {
         };
     }
 
+    static get isReadOnlySupported() {
+        return true;
+    }
+
     addCss(cssRules) {
         const head = document.head;
         let css = document.createElement('style');
